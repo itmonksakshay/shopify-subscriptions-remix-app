@@ -1,0 +1,32 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "7977fc7a1f18755e2397c112c7068a0d"
+application_url = "https://handbook-present-tie-mug.trycloudflare.com"
+embedded = true
+name = "ultimate-app"
+handle = "ultimate-app"
+
+[webhooks]
+api_version = "2024-10"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks/app/uninstalled"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = [
+  "https://handbook-present-tie-mug.trycloudflare.com/auth/callback",
+  "https://handbook-present-tie-mug.trycloudflare.com/auth/shopify/callback",
+  "https://handbook-present-tie-mug.trycloudflare.com/api/auth/callback"
+]
+
+[pos]
+embedded = false
+
+[build]
+dev_store_url = "my-test-app-new.myshopify.com"
+automatically_update_urls_on_dev = true
